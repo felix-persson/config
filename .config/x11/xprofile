@@ -1,0 +1,10 @@
+#!/bin/sh
+
+numlockx &
+setxkbmap -option caps:none se &
+
+start="dwmblocks mpd"
+
+for process in $start; do
+	pidof -x "$process" || "$process" &
+done >/dev/null 2>&1
