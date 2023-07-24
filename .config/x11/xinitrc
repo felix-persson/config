@@ -2,4 +2,4 @@
 
 . "${XDG_CONFIG_HOME}/x11/xprofile"
 
-exec dwm
+exec dbus-launch --exit-with-session dwm
