@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Selects a random wallpaper and applies it.
+
+dir="${XDG_DATA_HOME}/wallpapers"
+img="$(find $dir -type f | shuf -n 1)"
+width="$(identify $img | cut -d ' ' -f 3 | cut -d 'x' -f 1)"
+
+[ $width -gt 1920 ] && xwallpaper --no-randr --zoom $img || xwallpaper --zoom $img

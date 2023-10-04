@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Shows the internet connection status.
+
+printf "%s" \
+"$(sed "s/down/❌/;s/up/📶/" /sys/class/net/w*/operstate 2>/dev/null)" \
+"$(sed "s/down/❌/;s/up/🌐/" /sys/class/net/e*/operstate 2>/dev/null)" \
+"$(sed "s/.*/🔒/" /sys/class/net/tun*/operstate 2>/dev/null)"

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Shows volume percentage.
+
+volume=$(pulsemixer --get-volume | cut -d ' ' -f 1)
+
+[ "$(pulsemixer --get-mute)" = "0" ] && icon="🔊" || icon="🔇"
+
+printf "$icon%3d%%" $volume
