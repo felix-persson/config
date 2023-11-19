@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Updates dwmblocks if an event in MPD occurs.
+
+# Give time for MPD to start.
+sleep 1
+
+while : ;
+do
+	mpc idle >/dev/null && kill -36 "$(pidof dwmblocks)" || break
+done

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Updates dwmblocks if an event in PulseAudio occurs.
+
+pactl subscribe | grep --line-buffered "sink #0" | while read -r UNUSED_LINE;
+do
+    kill -35 "$(pidof dwmblocks)"
+done

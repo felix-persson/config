@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Computer shortcuts.
+
+options="Lock\nPower off\nRestart\nSuspend"
+
+selected=$(echo "$options" | dmenu -i -p "Computer options:")
+
+case "$selected" in
+	"Lock") slock ;;
+	"Power off") loginctl poweroff ;;
+	"Restart") loginctl restart ;;
+	"Suspend") loginctl suspend ;;
+esac

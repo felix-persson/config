@@ -2,8 +2,9 @@
 
 numlockx &
 setxkbmap -option caps:none se &
+wallpaper &
 
-start="dwmblocks mpd"
+start="dunst dwmblocks mpd mpd-update pa-update"
 
 for process in $start; do
 	pidof -x "$process" || "$process" &

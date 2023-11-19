@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Shows current time and date.
+
+date "+🕒 %a %b %d %R"

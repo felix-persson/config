@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Shows music information.
+
+pidof -x mpd-update >/dev/null 2>&1 || mpd-update >/dev/null 2>&1 &
+
+filter() {
+	sed "/^volume:/d;
+	    s/\\&/\&/g;
+	    s/\\[paused\\].*/⏸/g;
+	    s/\\[playing\\].*/🎵/g;
+	    /^ERROR/Q" |
+	tac |
+	paste -sd ' ' -
+}
+
+status=$(mpc status | filter)
+
+[ -z $status ] && echo "💤 Not playing" || echo $status
