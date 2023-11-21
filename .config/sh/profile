@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export PATH="$PATH:$HOME/.local/bin"
+
+export BROWSER="firefox"
+export EDITOR="vi"
+export TERMINAL="st"
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export HISTFILE="$XDG_DATA_HOME/history"
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+
+[ "$(tty)" = "/dev/tty1" ] && ! pidof -s Xorg >/dev/null 2>&1 && startx "$XINITRC"
