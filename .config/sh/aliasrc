@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Verbosity
+alias \
+    bc="bc -ilq" \
+    cp="cp -v" \
+    df="df -h" \
+    diff="diff --color=auto" \
+    du="du -h" \
+    grep="grep --color=auto" \
+    ls="ls -Fh --group-directories-first --color=auto" \
+    mkdir="mkdir -pv" \
+    mv="mv -v" \
+    nnn="nnn -cdEU" \
+    rm="rm -v" \
+
+# Shortcuts
+alias \
+    e="emerge" \
+    la="ls -A" \
+    ll="ls -l" \
+    startx="startx $XINITRC" \
+    v="$EDITOR" \
+    ytd="youtube-dl" \
+    ..="cd .." \
+
+# Git
+alias \
+    g="git" \
+    gc="git --git-dir=$HOME/.local/src/config --work-tree=$HOME" \
